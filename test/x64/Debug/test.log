@@ -1,0 +1,10 @@
+﻿  DelaunayMesh.cpp
+D:\2020.12gmsh\mymesh\mesh-yc-master\mesh-yc-master\fTetWild\build\include\floattetwild\Mesh.hpp(35,17): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+D:\2020.12gmsh\mymesh\mesh-yc-master\mesh-yc-master\fTetWild\build\include\floattetwild\Mesh.hpp(215,1): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+D:\2020.12gmsh\mymesh\mesh-yc-master\mesh-yc-master\fTetWild\build\include\floattetwild\Mesh.hpp(225,1): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+D:\cpp\vcpkg-master\installed\x64-windows\include\boost\bind.hpp(41): message : The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+D:\cpp\vcpkg-master\installed\x64-windows\include\CGAL\GMP\Gmpzf_type.h(452,25): warning C4244: “初始化”: 从“mp_bitcnt_t”转换到“unsigned long”，可能丢失数据
+D:\cpp\vcpkg-master\installed\x64-windows\include\CGAL\GMP\Gmpfr_type.h(1011,19): warning C4244: “初始化”: 从“mp_bitcnt_t”转换到“long”，可能丢失数据
+D:\cpp\vcpkg-master\installed\x64-windows\include\CGAL\GMP\Gmpfr_type.h(1136,54): warning C4244: “参数”: 从“mpir_ui”转换到“unsigned long”，可能丢失数据
+D:\cpp\vcpkg-master\installed\x64-windows\include\CGAL\GMP\Gmpfr_type.h(1138,54): warning C4244: “参数”: 从“mpir_ui”转换到“unsigned long”，可能丢失数据
+  test.vcxproj -> D:\2020.12gmsh\mymesh\test\x64\Debug\test.exe
