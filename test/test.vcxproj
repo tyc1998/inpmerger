@@ -161,6 +161,7 @@
     <ClCompile Include="predicates.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Algo.h" />
     <ClInclude Include="DelaunayMesh.h" />
     <ClInclude Include="InpIO.h" />
     <ClInclude Include="Mesh.h" />
