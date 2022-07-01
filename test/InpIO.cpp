@@ -44,6 +44,7 @@ namespace gl {
 
 	int InpIO::OutPortInp(const std::string path, Mesh& mesh)
 	{
+		mesh.DeleteDanglingNode();
 		FILE* p = fopen(path.c_str(), "w");
 
 		fprintf(p, "*NODE\n");
@@ -73,23 +74,29 @@ namespace gl {
 		return idx;
 	}
 
-	//int gl::InpIO::OutPortMesh(const std::string path) { 
-	//	FILE* p = fopen(path.c_str(), "w");
+	int InpIO::OutPortMesh(const std::string path, Mesh& mesh) {
+		FILE* p = fopen(path.c_str(), "w");
 
-	//	fprintf(p, "MeshVersionFormatted 1\nDimension 3\n");
-	//	fprintf(p, "Vertices\n%u\n", pos_.size());
-	//	for (int i = 0; i < pos_.size(); ++i)
-	//		fprintf(p, "%lf %lf %lf 0\n", pos_[i][0], pos_[i][1], pos_[i][2]);
+		fprintf(p, "MeshVersionFormatted 1\nDimension 3\n");
+		fprintf(p, "Vertices\n%u\n", mesh.tet_vertex_.size());
+		for (int i = 0; i < mesh.tet_vertex_.size(); ++i)
+			fprintf(p, "%lf %lf %lf 1\n", mesh.tet_vertex_[i][0], mesh.tet_vertex_[i][1], mesh.tet_vertex_[i][2]);
 
-	//	fprintf(p, "Tetrahedra\n%u\n", indices_.size());
-	//	for (int i = 0; i < indices_.size(); ++i) {
-	//		fprintf(p, "%d %d %d %d %d\n", indices_[i][0] + 1, indices_[i][1] + 1, indices_[i][2] + 1,
-	//			indices_[i][3] + 1, 0);
-	//	}
+		std::vector<Vector3i> boundary_face;
+		mesh.FindBoundaryFace(boundary_face);
+		fprintf(p, "Triangles\n%u\n", boundary_face.size());
+		for (int i = 0; i < boundary_face.size(); ++i)
+			fprintf(p, "%d %d %d 1\n", boundary_face[i][0], boundary_face[i][1], boundary_face[i][2]);
 
-	//	fprintf(p, "End");
-	//	fclose(p);
+		fprintf(p, "Tetrahedra\n%u\n", mesh.tets_.size());
+		for (int i = 0; i < mesh.tets_.size(); ++i) {
+			fprintf(p, "%d %d %d %d %d\n", mesh.tets_[i][0] + 1, mesh.tets_[i][1] + 1, mesh.tets_[i][2] + 1,
+				mesh.tets_[i][3] + 1, 1);
+		}
 
-	//	return indices_.size();
-	//}
+		fprintf(p, "End\n");
+		fclose(p);
+
+		return mesh.tets_.size();
+	}
 }

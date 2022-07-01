@@ -12,7 +12,7 @@ namespace gl {
 
     template<typename T>
     void VectorUnique(std::vector<T>& v) {
-        std::sort(v.begin(), v.end(), cmp);
+        std::sort(v.begin(), v.end());
         v.erase(std::unique(v.begin(), v.end()), v.end());
     }
 
@@ -62,28 +62,28 @@ namespace gl {
     void VectorIntersection(std::vector<T>& v1, std::vector<T>& v2, std::vector<T>& ret) {
         std::sort(v1.begin(), v1.end());
         std::sort(v2.begin(), v2.end());
-        std::set_intersection(v1.begin(), v1.end(), v2.begin(), v2.end(), std::back_inserter(res));
+        std::set_intersection(v1.begin(), v1.end(), v2.begin(), v2.end(), std::back_inserter(ret));
     }
 
     template<typename T, typename Cmp>
     void VectorIntersection(std::vector<T>& v1, std::vector<T>& v2, std::vector<T>& ret, Cmp cmp) {
         std::sort(v1.begin(), v1.end(), cmp);
         std::sort(v2.begin(), v2.end(), cmp);
-        std::set_intersection(v1.begin(), v1.end(), v2.begin(), v2.end(), std::back_inserter(res));
+        std::set_intersection(v1.begin(), v1.end(), v2.begin(), v2.end(), std::back_inserter(ret));
     }
 
     template<typename T>
     void VectorUnion(std::vector<T>& v1, std::vector<T>& v2, std::vector<T>& ret) {
         std::sort(v1.begin(), v1.end());
         std::sort(v2.begin(), v2.end());
-        std::set_union(v1.begin(), v1.end(), v2.begin(), v2.end(), std::back_inserter(res));
+        std::set_union(v1.begin(), v1.end(), v2.begin(), v2.end(), std::back_inserter(ret));
     }
 
     template<typename T, typename Cmp>
     void VectorUnion(std::vector<T>& v1, std::vector<T>& v2, std::vector<T>& ret, Cmp cmp) {
         std::sort(v1.begin(), v1.end(), cmp);
         std::sort(v2.begin(), v2.end(), cmp);
-        std::set_union(v1.begin(), v1.end(), v2.begin(), v2.end(), std::back_inserter(res));
+        std::set_union(v1.begin(), v1.end(), v2.begin(), v2.end(), std::back_inserter(ret));
     }
 }
 

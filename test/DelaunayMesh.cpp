@@ -46,7 +46,7 @@ namespace gl {
 
 	int DelaunayMesh::DeleteZero() {
 		int ret = 0;
-		ret = mesh_.DeleteZero(0.3, 0.01);
+		ret = mesh_.DeleteZero(5e-1, 1e-2);
 		return ret;
 	}
 
@@ -55,7 +55,7 @@ namespace gl {
 		InpIO::OutPortInp(path, mesh_);
 	}
 
-	//void DelaunayMesh::OutportMesh(const std::string path) {
-	//	InpIO::OutPortMesh(path, mesh_);
-	//}
+	void DelaunayMesh::OutportMesh(const std::string path) {
+		InpIO::OutPortMesh(path, mesh_);
+	}
 }

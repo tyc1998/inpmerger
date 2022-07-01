@@ -163,6 +163,7 @@
   <ItemGroup>
     <ClInclude Include="Algo.h" />
     <ClInclude Include="DelaunayMesh.h" />
+    <ClInclude Include="GeomAlgo.h" />
     <ClInclude Include="InpIO.h" />
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="Predicate.h" />
