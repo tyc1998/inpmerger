@@ -39,6 +39,8 @@ namespace gl {
 		}
 		assert(cdt.finite_cell_handles().size() == mesh_.tets_.size());
 
+		GEO::Mesh mesh;
+
 		printf("success delete %d tets\n", DeleteZero());
 
 		return true;
@@ -57,5 +59,17 @@ namespace gl {
 
 	void DelaunayMesh::OutportMesh(const std::string path) {
 		InpIO::OutPortMesh(path, mesh_);
+	}
+
+	void DelaunayMesh::OutportNode(const std::string path) {
+		InpIO::OutPortNode(path, mesh_);
+	}
+
+	void DelaunayMesh::OutportEle(const std::string path) {
+		InpIO::OutPortEle(path, mesh_);
+	}
+
+	void DelaunayMesh::FilterOutside(const std::string stl_path) {
+		mesh_.FilterOutside(stl_path);
 	}
 }

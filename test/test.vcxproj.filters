@@ -30,6 +30,12 @@
     <ClCompile Include="Predicate.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="GeomAlgo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="InpIO.h">
@@ -51,6 +57,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="GeomAlgo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Rational.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="StlIO.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

@@ -4,18 +4,18 @@
 #include <CGAL/Tetrahedron_3.h>
 #include <CGAL/Exact_predicates_inexact_constructions_kernel.h>
 #include <CGAL/Exact_predicates_exact_constructions_kernel.h>
-#include "Mesh.h"
+#include <array>
+#include <igl/parallel_for.h>
+#include <eigen3/Eigen/Dense>
+#include <igl/winding_number.h>
+#include "Types.h"
 
 namespace gl {
-	template<bool Exact>
-	bool IsOverlap(const MeshTet& lhs, const MeshTet& rhs) {
-		typedef std::conditional<Exact, CGAL::Exact_predicates_exact_constructions_kernel,
-			CGAL::Exact_predicates_inexact_constructions_kernel> K;
-		typedef CGAL::Tetrahedron_3<K> Tet;
+	double AMIPSenergy(const std::array<double, 12>& T);
+	double AMIPSenergyAux(const std::array<double, 12>& T);
 
-		//TODO
-		return true;
-	}
+	void FastWindingNumber(const Eigen::MatrixXd& v, const Eigen::MatrixXi& F, const Eigen::MatrixXd& P,
+		Eigen::VectorXd& W);
 }
 
 #endif

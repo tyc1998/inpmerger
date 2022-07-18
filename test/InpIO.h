@@ -21,6 +21,10 @@ namespace gl {
 		static int OutPortInp(const std::string path, Mesh& mesh);
 
 		static int OutPortMesh(const std::string path, Mesh& mesh);
+
+		static int OutPortNode(const std::string path, Mesh& mesh);
+
+		static int OutPortEle(const std::string path, Mesh& mesh);
 	};
 }
 

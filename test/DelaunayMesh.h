@@ -48,7 +48,13 @@ namespace gl {
 
 		void OutportMesh(const std::string path);
 
+		void OutportNode(const std::string path);
+
+		void OutportEle(const std::string path);
+
 		int DeleteZero();
+
+		void FilterOutside(std::string stl_path);
 
 	private:
 		Mesh mesh_;

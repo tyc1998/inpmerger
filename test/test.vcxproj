@@ -121,14 +121,14 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_ITERATOR_DEBUG_LEVEL=2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_ITERATOR_DEBUG_LEVEL=2;_CRT_SECURE_NO_WARNINGS=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\2020.12gmsh\mymesh\mesh-yc-master\mesh-yc-master\fTetWild\3rdparty\geogram\src\lib;D:\2020.12gmsh\mymesh\mesh-yc-master\mesh-yc-master\fTetWild\3rdparty\libigl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>D:\2020.12gmsh\mymesh\mesh-yc-master\mesh-yc-master\fTetWild\build\3rdparty\fmt\Debug\fmtd.lib;D:\2020.12gmsh\mymesh\mesh-yc-master\mesh-yc-master\fTetWild\build\lib\Debug\geogram.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalOptions>/FORCE %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
@@ -138,9 +138,9 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CRT_SECURE_NO_WARNINGS=1;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\2020.12gmsh\mymesh\mesh-yc-master\mesh-yc-master\fTetWild\3rdparty\json\include;D:\2020.12gmsh\mymesh\mesh-yc-master\mesh-yc-master\fTetWild\build\include;D:\2020.12gmsh\mymesh\mesh-yc-master\mesh-yc-master\fTetWild\3rdparty\geogram\src\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\2020.12gmsh\mymesh\mesh-yc-master\mesh-yc-master\fTetWild\3rdparty\libigl\include;D:\2020.12gmsh\mymesh\mesh-yc-master\mesh-yc-master\fTetWild\3rdparty\json\include;D:\2020.12gmsh\mymesh\mesh-yc-master\mesh-yc-master\fTetWild\build\include;D:\2020.12gmsh\mymesh\mesh-yc-master\mesh-yc-master\fTetWild\3rdparty\geogram\src\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
@@ -149,14 +149,16 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>D:\2020.12gmsh\mymesh\mesh-yc-master\mesh-yc-master\fTetWild\build\lib\Release\geogram.lib;D:\2020.12gmsh\mymesh\mesh-yc-master\mesh-yc-master\fTetWild\build\Release\FloatTetwild.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>D:\2020.12gmsh\mymesh\mesh-yc-master\mesh-yc-master\fTetWild\build\lib\Release\geogram.lib;D:\2020.12gmsh\mymesh\mesh-yc-master\mesh-yc-master\fTetWild\build\Release\FloatTetwild.lib;D:\2020.12gmsh\mymesh\mesh-yc-master\mesh-yc-master\fTetWild\build\3rdparty\fmt\Release\fmt.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalOptions>/FORCE %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DelaunayMesh.cpp" />
+    <ClCompile Include="GeomAlgo.cpp" />
     <ClCompile Include="InpIO.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="Predicate.cpp" />
     <ClCompile Include="predicates.c" />
   </ItemGroup>
@@ -167,6 +169,8 @@
     <ClInclude Include="InpIO.h" />
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="Predicate.h" />
+    <ClInclude Include="Rational.h" />
+    <ClInclude Include="StlIO.h" />
     <ClInclude Include="Types.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
